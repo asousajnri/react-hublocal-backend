@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=local nodemon ./src/index.js",
-    "migrate": "NODE_ENV=local sequelize db:migrate",
-    "migrate:undo": "NODE_ENV=local sequelize db:migrate:undo"
+    "dev:migrate": "NODE_ENV=local sequelize db:migrate",
+    "dev:migrate:undo": "NODE_ENV=local sequelize db:migrate:undo",
+    "start": "node ./src/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
