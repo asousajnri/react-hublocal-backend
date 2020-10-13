@@ -15,6 +15,17 @@ module.exports = {
 
     return response.json(user.tasks);
   },
+  async getOneTask(request, response) {
+    const { task_id } = request.params;
+
+    const task = await Task.findByPk(task_id);
+
+    if (!task) {
+      return response.status(400).json({ message: "Nenhuma task encontrada" });
+    }
+
+    return response.json(task);
+  },
   async store(request, response) {
     const { user_id } = request.params;
     const { name, description, status } = request.body;
