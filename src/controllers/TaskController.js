@@ -18,7 +18,7 @@ module.exports = {
   async getOneTask(request, response) {
     const { task_id } = request.params;
 
-    const task = await Task.findByPk(task_id);
+    const task = await Task.findOne({ where: { id: task_id } });
 
     if (!task) {
       return response.status(400).json({ message: "Nenhuma task encontrada" });
