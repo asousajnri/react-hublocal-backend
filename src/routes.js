@@ -19,7 +19,7 @@ routes.use(authMiddleware);
 
 // Tasks
 routes.get("/users/:user_id/tasks", TaskController.index);
-routes.get("/users/:user_id/tasks/:task_id", TaskController.getOneTask);
+routes.get("/tasks/:task_id", TaskController.getOneTask);
 routes.post("/users/:user_id/tasks", TaskController.store);
 routes.put("/users/:user_id/tasks/:task_id", TaskController.update);
 routes.delete("/users/:user_id/tasks/:task_id", TaskController.delete);
